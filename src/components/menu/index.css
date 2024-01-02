@@ -1,0 +1,22 @@
+.menu{
+    display: flex;
+    padding: 5px;
+    border-bottom: 1px solid rgba(248, 242, 242, 0.3);
+    margin-bottom: 10px;
+    list-style: none;
+    align-items: center;
+}
+li{
+    padding: 5px;
+    margin: 5px 0;
+}
+li:hover{
+    font-size: 20px;
+}
+.menu a{
+    color: aliceblue;
+    font-size: medium;
+}
+.logo{
+    width: 75px;
+}

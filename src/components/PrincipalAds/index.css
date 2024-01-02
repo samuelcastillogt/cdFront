@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    overflow-x: scroll;
+    width: 100%; 
+}
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 0%;
+}
+.principal{
+    padding: 10px;
+}
