@@ -25,7 +25,7 @@ const Menu = ()=>{
             {/* {
                 user.displayName && <li><Link to="/dashboard">Dashboard</Link></li>
             } */}
-            <li><AuthButton /></li>
+            {/* <li><AuthButton /></li> */}
         </ul>
     )
 }
