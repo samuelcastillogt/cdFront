@@ -22,9 +22,9 @@ const Menu = ()=>{
             {
                 rutas.map((ruta => <li><Link to={ruta.to}>{ruta.label}</Link></li>))
             }
-            {
+            {/* {
                 user.displayName && <li><Link to="/dashboard">Dashboard</Link></li>
-            }
+            } */}
             <li><AuthButton /></li>
         </ul>
     )
