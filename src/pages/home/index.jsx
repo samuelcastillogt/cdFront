@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroHome from "../../components/Hero/Home";
 import Menu from "../../components/menu";
 import PrincipalAds from "../../components/PrincipalAds";
@@ -6,6 +6,9 @@ import PrincipalBlog from "../../components/PrincipalBlogs";
 import { Helmet } from "react-helmet";
 
 const Home = ()=>{
+    useEffect(()=>{
+        console.log("Haiaiai")
+    },[])
     return(
         <div>
             <Helmet>
