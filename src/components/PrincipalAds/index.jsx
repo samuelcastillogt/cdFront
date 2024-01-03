@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { serviceData } from "../../services/data";
 import AdCard from "../AdCard";
@@ -17,6 +17,9 @@ const PrincipalAds = ()=>{
     useEffect(()=>{
           getData()  
     }, [])
+    useLayoutEffect(()=>{
+        console.log("primer render")
+    })
     return(
         <div className="principal">
         <p className="title">Nuevos negocios registrados</p>
