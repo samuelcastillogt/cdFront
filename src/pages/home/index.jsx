@@ -1,14 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import HeroHome from "../../components/Hero/Home";
 import Menu from "../../components/menu";
 import PrincipalAds from "../../components/PrincipalAds";
 import PrincipalBlog from "../../components/PrincipalBlogs";
 import { Helmet } from "react-helmet";
-
+import { SET_ADS_DATA } from "../../redux/slices/ads.slice";
+import { serviceData } from "../../services/data";
+import { useSelector, useDispatch } from "react-redux";
 const Home = ()=>{
+    const dispatch = useDispatch()
+    const getData = async()=>{
+        const response = await serviceData.getDataAds()
+        if(response){
+            dispatch(SET_ADS_DATA(response.data))
+        }
+        
+    }
     useEffect(()=>{
-        console.log("Haiaiai")
-    },[])
+          getData()  
+    }, [])
+    useLayoutEffect(()=>{
+        getData() 
+    })
     return(
         <div>
             <Helmet>

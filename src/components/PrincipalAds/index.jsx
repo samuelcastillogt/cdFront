@@ -6,20 +6,20 @@ import "./index.css"
 import { SET_ADS_DATA } from "../../redux/slices/ads.slice";
 const PrincipalAds = ()=>{
     const state = useSelector(state => state.ads.data)
-    const dispatch = useDispatch()
-    const getData = async()=>{
-        const response = await serviceData.getDataAds()
-        if(response){
-            dispatch(SET_ADS_DATA(response.data))
-        }
+    // const dispatch = useDispatch()
+    // const getData = async()=>{
+    //     const response = await serviceData.getDataAds()
+    //     if(response){
+    //         dispatch(SET_ADS_DATA(response.data))
+    //     }
         
-    }
-    useEffect(()=>{
-          getData()  
-    }, [])
-    useLayoutEffect(()=>{
-        getData() 
-    })
+    // }
+    // useEffect(()=>{
+    //       getData()  
+    // }, [])
+    // useLayoutEffect(()=>{
+    //     getData() 
+    // })
     return(
         <div className="principal">
         <p className="title">Nuevos negocios registrados</p>
