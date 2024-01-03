@@ -10,8 +10,8 @@ class ServiceData{
         const hostName = store.getState().enviroment.value
         try{
             if(hostName.length >0 ){
-            const {data} = await axios.get(hostName)
-            store.dispatch(SET_ADS_DATA(data))                
+            const data = await axios.get(hostName)
+            store.dispatch(SET_ADS_DATA(data.data))                
             }
 
         }catch(err){
@@ -23,8 +23,8 @@ class ServiceData{
         const hostName = store.getState().enviroment.value
         try{
             if(hostName.length >0 ){
-            const {data} = await axios.get(hostName+ "blog")
-            store.dispatch(SET_BLOG_DATA(data))               
+            const data = await axios.get(hostName+ "blog")
+            store.dispatch(SET_BLOG_DATA(data.data))               
             }
 
         }catch(err){
@@ -37,8 +37,8 @@ class ServiceData{
         try{
             if(id != undefined){               
         const hostName = store.getState().enviroment.value
-            const {data} = await axios.get(hostName + "autor/" + id)
-            return data               
+            const data = await axios.get(hostName + "autor/" + id)
+            return data.data               
             }
 
         }catch(err){
@@ -50,8 +50,8 @@ class ServiceData{
         const hostName = store.getState().enviroment.value
         try{
             if(hostName.length >0 ){
-            const {data} = await axios.get(hostName + "details/" + id)
-            return data               
+            const data = await axios.get(hostName + "details/" + id)
+            return data.data               
             }
 
         }catch(err){
@@ -63,8 +63,8 @@ class ServiceData{
         const hostName = store.getState().enviroment.value
         try{
             if(hostName.length >0 ){
-            const {data} = await axios.get(hostName + "blog/" + id)
-            return data               
+            const data = await axios.get(hostName + "blog/" + id)
+            return data.data               
             }
 
         }catch(err){
