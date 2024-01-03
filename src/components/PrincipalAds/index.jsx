@@ -16,9 +16,9 @@ const PrincipalAds = ()=>{
     }
     useEffect(()=>{
           getData()  
-    }, [state])
+    }, [])
     useLayoutEffect(()=>{
-        console.log("primer render")
+        getData() 
     })
     return(
         <div className="principal">
