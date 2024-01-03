@@ -10,8 +10,9 @@ class ServiceData{
         const hostName = store.getState().enviroment.value
         try{
             if(hostName.length >0 ){
-            const data = await axios.get(hostName)
-            store.dispatch(SET_ADS_DATA(data.data))                
+            // const data = await axios.get(hostName)
+            // store.dispatch(SET_ADS_DATA(data.data))
+            return  await axios.get(hostName)               
             }
 
         }catch(err){
@@ -36,7 +37,7 @@ class ServiceData{
         const hostName = store.getState().enviroment.value
         try{
             if(id != undefined){               
-        const hostName = store.getState().enviroment.value
+            const hostName = store.getState().enviroment.value
             const data = await axios.get(hostName + "autor/" + id)
             return data.data               
             }
@@ -50,8 +51,7 @@ class ServiceData{
         const hostName = store.getState().enviroment.value
         try{
             if(hostName.length >0 ){
-            const data = await axios.get(hostName + "details/" + id)
-            return data.data               
+                return await axios.get(hostName + "details/" + id)               
             }
 
         }catch(err){
