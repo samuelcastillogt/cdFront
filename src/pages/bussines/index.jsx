@@ -12,11 +12,13 @@ const BusinessPage = ()=>{
     const url = window.location.pathname
     const getData= async()=>{
         const response = await serviceData.getDetailsBussines(url.replace("/bussines/", ""))
-        if(response.data == undefined){
-            setError(true)
-            setLoading(false)
+         console.log(response)
+        if(response){
+             setData(response)
+            setLoading(false)           
         }else{
-            setData(response)
+
+            setError(true)
             setLoading(false)
         }
     }

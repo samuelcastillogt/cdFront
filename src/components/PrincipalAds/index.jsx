@@ -9,7 +9,10 @@ const PrincipalAds = ()=>{
     const dispatch = useDispatch()
     const getData = async()=>{
         const response = await serviceData.getDataAds()
-        dispatch(SET_ADS_DATA(response.data))
+        if(response){
+            dispatch(SET_ADS_DATA(response.data))
+        }
+        
     }
     useEffect(()=>{
           getData()  
