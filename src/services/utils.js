@@ -2,7 +2,7 @@ const base = window.location
 import { enviromentReg } from "../redux/slices/enviroment.slice"
 import {store} from "../redux/store"
 const getEnviroment = ()=>{
-    const url = base.hostname == "localhost" ? "http://localhost:4000/": "prod"
+    const url = base.hostname == "localhost" ? "http://localhost:4000/": "https://cdserver-r54a.vercel.app/"
     store.dispatch(enviromentReg(url))
 }
 export default getEnviroment
