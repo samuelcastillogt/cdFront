@@ -18,10 +18,10 @@ const Home = ()=>{
         }   
     }
     useEffect(()=>{
-        //   getData()
+          getData()
         console.log("dentro useefect")  
     }, [])
-    // useLayoutEffect(()=> {getData()})
+    useLayoutEffect(()=> {getData()},[])
     return(
         <div>
             <Helmet>
