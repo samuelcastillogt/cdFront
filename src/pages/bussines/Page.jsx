@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import HTMLRenderer from 'react-html-renderer'
 const Page = (props)=>{
     const {data} = props
-    console.log(data)
+    console.log(data.data.imagen)
 return(<>
 <Helmet>
 <meta

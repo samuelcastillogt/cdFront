@@ -4,6 +4,7 @@ import {Helmet} from "react-helmet"
 import ShareFacebook from "../../components/buttons/ShareFacebook";
 const Page = (props)=>{
     const {data} = props
+    console.log(data.data.imagen)
 return(<>
             <Helmet>
                 <meta charSet="utf-8" />
@@ -11,6 +12,10 @@ return(<>
                 <meta name="description" content={data.data.descripcion} />
                 <meta name="keywords" content={data.data.keyword} />
                 <link rel="canonical" href={window.location.href} />
+                <meta
+      property="og:image"
+      content={data.data.imagen}
+    />
             </Helmet>
         <div>
             <div className="cabecera">
