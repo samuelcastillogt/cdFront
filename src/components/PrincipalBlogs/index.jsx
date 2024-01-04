@@ -6,10 +6,6 @@ import "./index.css"
 import BlogCard from "../BlogCard";
 const PrincipalBlog = ()=>{
     const state = useSelector(state => state.blog.data)
-    useEffect(()=>{
-            // serviceData.getDataBlog()
-            // console.log("useefect del blog")
-    }, [])
     return(
         <div className="container-blogs">
         <h2 className="title">Un poco mas sobre Ciudad Quetzal</h2>

@@ -1,7 +1,5 @@
 import axios from "axios"
 import { store } from "../redux/store";
-import { SET_ADS_DATA } from "../redux/slices/ads.slice";
-import { SET_BLOG_DATA } from "../redux/slices/blog.slice";
 const hostName = "https://cdserver-r54a.vercel.app/"
 class ServiceData{
     constructor(enviroment){
@@ -22,9 +20,7 @@ class ServiceData{
     getDataBlog = async()=>{
  
         try{
-            const data = await axios.get(hostName+ "blog")
-            store.dispatch(SET_BLOG_DATA(data.data))               
-
+            return await axios.get(hostName+ "blog")
         }catch(err){
             console.log(err)
         }

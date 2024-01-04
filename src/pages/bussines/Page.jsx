@@ -2,6 +2,7 @@ import React from "react";
 import HTMLRenderer from 'react-html-renderer'
 const Page = (props)=>{
     const {data} = props
+    console.log(data)
 return(<>
         <div>
             <div className="cabecera">
