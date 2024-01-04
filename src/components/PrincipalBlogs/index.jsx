@@ -7,7 +7,8 @@ import BlogCard from "../BlogCard";
 const PrincipalBlog = ()=>{
     const state = useSelector(state => state.blog.data)
     useEffect(()=>{
-            serviceData.getDataBlog()
+            // serviceData.getDataBlog()
+            console.log("useefect del blog")
     }, [])
     return(
         <div className="container-blogs">

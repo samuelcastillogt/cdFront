@@ -10,18 +10,18 @@ import { useSelector, useDispatch } from "react-redux";
 const Home = ()=>{
     const dispatch = useDispatch()
     const getData = async()=>{
+        console.log("Dentro")
         const response = await serviceData.getDataAds()
+        console.log(response)
         if(response){
             dispatch(SET_ADS_DATA(response.data))
-        }
-        
+        }   
     }
     useEffect(()=>{
-          getData()  
+        //   getData()
+        console.log("dentro useefect")  
     }, [])
-    useLayoutEffect(()=>{
-        getData() 
-    })
+    // useLayoutEffect(()=> {getData()})
     return(
         <div>
             <Helmet>
