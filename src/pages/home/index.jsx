@@ -8,14 +8,18 @@ import { SET_ADS_DATA } from "../../redux/slices/ads.slice";
 import { serviceData } from "../../services/data";
 import { useSelector, useDispatch } from "react-redux";
 const Home = ()=>{
+    const state = useSelector(state => state.ads.data)
     const dispatch = useDispatch()
     const getData = async()=>{
-        console.log("Dentro")
-        const response = await serviceData.getDataAds()
+        console.log(state)
+        if(state.length == 0){
+          const response = await serviceData.getDataAds()
         console.log(response)
         if(response){
             dispatch(SET_ADS_DATA(response.data))
         }   
+        }
+          
     }
     useEffect(()=>{
           getData()

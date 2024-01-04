@@ -2,15 +2,16 @@ import axios from "axios"
 import { store } from "../redux/store";
 import { SET_ADS_DATA } from "../redux/slices/ads.slice";
 import { SET_BLOG_DATA } from "../redux/slices/blog.slice";
+const hostName = "https://cdserver-r54a.vercel.app/"
 class ServiceData{
     constructor(enviroment){
-        this.enviroment = enviroment
+        
     }
     getDataAds = async()=>{
-        const hostName = store.getState().enviroment.value
+        
         console.log(hostName)
         try{
-            return  await axios.get("https://cdserver-r54a.vercel.app/")               
+            return  await axios.get(hostName)               
            
 
         }catch(err){
@@ -19,9 +20,9 @@ class ServiceData{
 
     }
     getDataBlog = async()=>{
-        const hostName = store.getState().enviroment.value
+ 
         try{
-            const data = await axios.get("https://cdserver-r54a.vercel.app/"+ "blog")
+            const data = await axios.get(hostName+ "blog")
             store.dispatch(SET_BLOG_DATA(data.data))               
 
         }catch(err){
@@ -30,10 +31,10 @@ class ServiceData{
 
     }
     getDataAdsByAutor = async(id)=>{
-        const hostName = store.getState().enviroment.value
+ 
         try{
             if(id != undefined){               
-            const hostName = store.getState().enviroment.value
+     
             const data = await axios.get(hostName + "autor/" + id)
             return data.data               
             }
@@ -44,7 +45,7 @@ class ServiceData{
 
     }
     getDetailsBussines = async(id)=>{
-        const hostName = store.getState().enviroment.value
+ 
         try{
             if(hostName.length >0 ){
                 return await axios.get(hostName + "details/" + id)               
@@ -56,7 +57,7 @@ class ServiceData{
 
     }
     getDetailsBlog = async(id)=>{
-        const hostName = store.getState().enviroment.value
+ 
         try{
             if(hostName.length >0 ){
             const data = await axios.get(hostName + "blog/" + id)
@@ -69,7 +70,7 @@ class ServiceData{
 
     }
     savePost = async(post)=>{
-        const hostName = store.getState().enviroment.value
+ 
         try{
             if(hostName.length >0 ){
             const {data} = await axios.post(hostName + "createpost", post)      
@@ -80,7 +81,7 @@ class ServiceData{
         }
     }
     saveBlogPost = async(post)=>{
-        const hostName = store.getState().enviroment.value
+ 
         try{
             if(hostName.length >0 ){
             const {data} = await axios.post(hostName + "createblogpost", post)      
