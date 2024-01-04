@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import { SET_ADS_DATA } from "../../redux/slices/ads.slice";
 import { serviceData } from "../../services/data";
 import { useSelector, useDispatch } from "react-redux";
+import { SET_BLOG_DATA } from "../../redux/slices/blog.slice";
 const Home = ()=>{
     const state = useSelector(state => state.ads.data)
     const dispatch = useDispatch()
@@ -14,18 +15,17 @@ const Home = ()=>{
         console.log(state)
         if(state.length == 0){
           const response = await serviceData.getDataAds()
-        console.log(response)
+          const response2 = await serviceData.getDataBlog()
         if(response){
             dispatch(SET_ADS_DATA(response.data))
+            dispatch(SET_BLOG_DATA(response2.data))
         }   
         }
           
     }
     useEffect(()=>{
-          getData()
-        console.log("dentro useefect")  
+          getData() 
     }, [])
-    useLayoutEffect(()=> {getData()},[])
     return(
         <div>
             <Helmet>
