@@ -10,11 +10,10 @@ class ServiceData{
         const hostName = store.getState().enviroment.value
         console.log(hostName)
         try{
-            if(hostName.length >0 ){
             // const data = await axios.get(hostName)
             // store.dispatch(SET_ADS_DATA(data.data))
             return  await axios.get("https://cdserver-r54a.vercel.app/")               
-            }
+           
 
         }catch(err){
             console.log(err)
