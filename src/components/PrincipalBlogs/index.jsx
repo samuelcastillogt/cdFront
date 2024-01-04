@@ -8,7 +8,7 @@ const PrincipalBlog = ()=>{
     const state = useSelector(state => state.blog.data)
     useEffect(()=>{
             // serviceData.getDataBlog()
-            console.log("useefect del blog")
+            // console.log("useefect del blog")
     }, [])
     return(
         <div className="container-blogs">
